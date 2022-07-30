@@ -201,6 +201,11 @@ func (d *DropDown) SetAlwaysDrawDropDownSymbol(alwaysDraw bool) {
 	d.alwaysDrawDropDownSymbol = alwaysDraw
 }
 
+// SetIndicators is used to set prefix and suffix indicators for selected and unselected items.
+func (d *DropDown) SetIndicators(selectedPrefix, selectedSuffix, unselectedPrefix, unselectedSuffix []byte) {
+	d.list.SetIndicators(selectedPrefix, selectedSuffix, unselectedPrefix, unselectedSuffix)
+}
+
 // SetCurrentOption sets the index of the currently selected option. This may
 // be a negative value to indicate that no option is currently selected. Calling
 // this function will also trigger the "selected" callback (if there is one).
