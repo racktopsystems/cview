@@ -637,20 +637,20 @@ func (l *List) SetItemEnabled(index int, enabled bool) {
 }
 
 // SetIndicators is used to set prefix and suffix indicators for selected and unselected items.
-func (l *List) SetIndicators(selectedPrefix, selectedSuffix, unselectedPrefix, unselectedSuffix []byte) {
+func (l *List) SetIndicators(selectedPrefix, selectedSuffix, unselectedPrefix, unselectedSuffix string) {
 	l.Lock()
 	defer l.Unlock()
-	l.selectedPrefix = selectedPrefix
-	l.selectedSuffix = selectedSuffix
-	l.unselectedPrefix = unselectedPrefix
-	l.unselectedSuffix = unselectedSuffix
-	l.prefixWidth = len(l.selectedPrefix)
-	if len(l.unselectedPrefix) > l.prefixWidth {
-		l.prefixWidth = len(l.unselectedPrefix)
+	l.selectedPrefix = []byte(selectedPrefix)
+	l.selectedSuffix = []byte(selectedSuffix)
+	l.unselectedPrefix = []byte(unselectedPrefix)
+	l.unselectedSuffix = []byte(unselectedSuffix)
+	l.prefixWidth = len(selectedPrefix)
+	if len(unselectedPrefix) > l.prefixWidth {
+		l.prefixWidth = len(unselectedPrefix)
 	}
-	l.suffixWidth = len(l.selectedSuffix)
-	if len(l.unselectedSuffix) > l.suffixWidth {
-		l.suffixWidth = len(l.unselectedSuffix)
+	l.suffixWidth = len(selectedSuffix)
+	if len(unselectedSuffix) > l.suffixWidth {
+		l.suffixWidth = len(unselectedSuffix)
 	}
 }
 
