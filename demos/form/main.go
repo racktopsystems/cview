@@ -2,7 +2,7 @@
 package main
 
 import (
-	"code.rocketnine.space/tslocum/cview"
+	"github.com/racktopsystems/cview"
 )
 
 func main() {

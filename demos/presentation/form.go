@@ -1,7 +1,7 @@
 package main
 
 import (
-	"code.rocketnine.space/tslocum/cview"
+	"github.com/racktopsystems/cview"
 )
 
 const form = `[green]package[white] main

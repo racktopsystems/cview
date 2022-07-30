@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"code.rocketnine.space/tslocum/cview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/racktopsystems/cview"
 )
 
 // End shows the final slide.

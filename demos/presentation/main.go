@@ -20,8 +20,8 @@ import (
 	_ "net/http/pprof"
 	"strconv"
 
-	"code.rocketnine.space/tslocum/cview"
 	"github.com/gdamore/tcell/v2"
+	"github.com/racktopsystems/cview"
 )
 
 const (
